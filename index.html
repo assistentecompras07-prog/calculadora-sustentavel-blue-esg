@@ -48,6 +48,15 @@
       .result-grid{grid-template-columns:1fr 1fr;gap:9px;padding:12px;flex:1}.impact{min-height:137px;padding:13px;border-radius:16px}.impact-label{font-size:11px}.impact-badge{width:36px;height:36px;border-radius:11px}.impact-badge svg{width:22px;height:22px}.impact-value{font-size:31px;margin:8px 0 4px}.equiv{font-size:9px}
       .note{margin:0 14px 11px;padding:8px 3px 0;font-size:8.5px}footer{padding:0 16px 10px;font-size:9px}
     }
+    .eco-hero{position:relative;overflow:hidden;border-radius:24px;margin:4px 0 16px;padding:22px 28px!important;min-height:150px;background-image:linear-gradient(90deg,rgba(5,65,112,.97) 0%,rgba(5,77,128,.90) 42%,rgba(5,77,128,.12) 70%),url('assets/illustrations/hero-planeta.png');background-size:cover;background-position:center}
+    .eco-hero h1,.eco-hero h1 span{color:#fff}.eco-hero p{color:#e7f7ef}.eco-hero .eyebrow{color:#9bea9f}.eco-hero .eyebrow::before{background:#61c879}
+    .product-icon{overflow:hidden;background:#effaf3!important}.product-icon img{width:100%;height:100%;object-fit:cover;transform:scale(1.18)}
+    .stepper button{background:linear-gradient(180deg,#46b56b,#279454)!important}.stepper button:hover{background:#21784a!important}
+    .result-header{background:linear-gradient(135deg,#176e47,#299f61)!important}
+    .impact{position:relative;overflow:hidden;padding-top:70px!important}.impact-art{position:absolute;left:0;top:0;width:100%;height:68px;object-fit:cover;opacity:.96}.impact-label{position:relative;color:#174a34!important;font-weight:800!important}
+    .impact-value{color:#116a3e!important}
+    @media(min-width:861px){.topbar{display:none}.intro.eco-hero{display:flex;align-items:center;margin-top:18px;min-height:164px}.workspace{margin-top:0}.product-icon{width:66px!important;height:58px!important}.product{min-height:145px}.impact{min-height:176px!important}.result-grid{grid-template-columns:1fr 1fr}.result-header{padding-top:20px}}
+    @media(max-width:860px){.eco-hero{min-height:220px;background-position:65% center;padding:24px 20px!important}.eco-hero>div{max-width:68%}.product-icon{width:62px;height:58px}.impact{padding-top:92px!important}.impact-art{height:88px}}
   </style>
 </head>
 <body>
@@ -56,9 +65,8 @@
       <div class="top-title">Calculadora Sustentável</div>
       <img class="brand-logo" src="assets/selo-blue-esg.png" alt="Selo Blue ESG — empresa responsável, mundo sustentável">
     </div>
-    <div class="intro">
+    <div class="intro eco-hero">
       <div><span class="eyebrow">Sustentabilidade em números</span><h1>Impacto <span>ambiental</span> do seu consumo</h1><p>Informe o consumo mensal e acompanhe estimativas ambientais de forma simples e visual.</p></div>
-      <div class="nature-mark" aria-hidden="true"><span class="leaf"></span><span class="drop"></span><span class="spark"></span></div>
     </div>
   </header>
 
@@ -72,10 +80,10 @@
     <section class="card results" id="results" aria-labelledby="result-title" aria-live="polite">
       <div class="result-header"><h2 id="result-title">Seu impacto estimado</h2><p>Os resultados são atualizados automaticamente.</p><div class="summary"><div><span>Total informado</span><strong><span id="total-packs">0</span> fardos</strong></div><div><span>Massa considerada</span><strong><span id="total-mass">0,0</span> kg</strong></div></div></div>
       <div class="result-grid">
-        <article class="impact water"><div class="impact-label"><span class="impact-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3S6.5 9.2 6.5 14a5.5 5.5 0 0 0 11 0C17.5 9.2 12 3 12 3Z"/><path d="M9.5 15.2c.4 1.3 1.3 2 2.6 2.2"/></svg></span>Água preservada</div><div><div class="impact-value"><span id="water">0</span> <small>L</small></div><p class="equiv">Equivale a cerca de <strong><span id="water-eq">0</span> banhos</strong> de 10 minutos</p></div></article>
-        <article class="impact energy"><div class="impact-label"><span class="impact-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m13 2-7 12h6l-1 8 7-12h-6l1-8Z"/></svg></span>Energia otimizada</div><div><div class="impact-value"><span id="energy">0,0</span> <small>kWh</small></div><p class="equiv">Equivale a cerca de <strong><span id="energy-eq">0,0</span> dias</strong> de geladeira ligada</p></div></article>
-        <article class="impact area"><div class="impact-label"><span class="impact-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V9"/><path d="M12 13C7 13 4 10 4 5c5 0 8 3 8 8ZM12 16c5 0 8-3 8-8-5 0-8 3-8 8Z"/><path d="M7 21h10"/></svg></span>Área nativa protegida</div><div><div class="impact-value"><span id="area">0,0</span> <small>m²</small></div><p class="equiv">Referência equivalente a <strong><span id="area-eq">0,0</span> mudas</strong> de árvores nativas</p></div></article>
-        <article class="impact carbon"><div class="impact-label"><span class="impact-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 8.6 4.7 4.7 0 0 0 7 18Z"/><path d="M8.5 13.5h7"/></svg></span>Carbono evitado</div><div><div class="impact-value"><span id="carbon">0,0</span> <small>kg CO₂ eq.</small></div><p class="equiv">Equivale a aproximadamente <strong><span id="carbon-eq">0,0</span> km</strong> de carro popular</p></div></article>
+        <article class="impact water"><img class="impact-art" src="assets/illustrations/agua.png" alt=""><div class="impact-label">Água preservada</div><div><div class="impact-value"><span id="water">0</span> <small>L</small></div><p class="equiv">Equivale a cerca de <strong><span id="water-eq">0</span> banhos</strong> de 10 minutos</p></div></article>
+        <article class="impact energy"><img class="impact-art" src="assets/illustrations/energia.png" alt=""><div class="impact-label">Energia otimizada</div><div><div class="impact-value"><span id="energy">0,0</span> <small>kWh</small></div><p class="equiv">Equivale a cerca de <strong><span id="energy-eq">0,0</span> dias</strong> de geladeira ligada</p></div></article>
+        <article class="impact area"><img class="impact-art" src="assets/illustrations/arvores.png" alt=""><div class="impact-label">Área nativa protegida</div><div><div class="impact-value"><span id="area">0,0</span> <small>m²</small></div><p class="equiv">Referência equivalente a <strong><span id="area-eq">0,0</span> mudas</strong> de árvores nativas</p></div></article>
+        <article class="impact carbon"><img class="impact-art" src="assets/illustrations/carbono.png" alt=""><div class="impact-label">Carbono evitado</div><div><div class="impact-value"><span id="carbon">0,0</span> <small>kg CO₂ eq.</small></div><p class="equiv">Equivale a aproximadamente <strong><span id="carbon-eq">0,0</span> km</strong> de carro popular</p></div></article>
       </div>
       <p class="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"/></svg><span>Simulação educativa baseada em coeficientes médios por quilo de produto. Os resultados são estimativas e não representam compensação ambiental, economia direta ou certificação individual de impacto.</span></p>
     </section>
@@ -91,9 +99,14 @@
     ];
     const coef={water:20,energy:2.2,area:.94,carbon:.5};
     const equiv={shower:70,fridge:1,seedling:4,carKm:.15};
-    const icons={roll:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="12" r="6"/><circle cx="9" cy="12" r="2"/><path d="M9 6h7c3 0 5 2.7 5 6s-2 6-5 6H9"/></svg>',layers:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg>'};
+    const icons={
+      toalhaBobina:'<img src="assets/illustrations/papel-bobina.png" alt="">',
+      toalhaInterfolhado:'<img src="assets/illustrations/papel-interfolhado.png" alt="">',
+      higienicoRolao:'<img src="assets/illustrations/higienico-rolao.png" alt="">',
+      higienicoInterfolhado:'<img src="assets/illustrations/higienico-interfolhado.png" alt="">'
+    };
     const $=id=>document.getElementById(id);const format=(n,d=0)=>n.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
-    $('products').innerHTML=products.map(p=>`<div class="product"><div class="product-top"><span class="product-icon">${icons[p.icon]}</span><div><label class="product-name" for="${p.id}">${p.name}</label><div class="product-meta">${p.detail} · Peso aproximado: ${format(p.mass,2)} kg</div></div></div><div class="stepper"><button type="button" data-id="${p.id}" data-step="-1" aria-label="Diminuir ${p.name}">−</button><input id="${p.id}" type="number" min="0" step="1" value="0" inputmode="numeric" aria-label="Quantidade mensal de ${p.name}"><button type="button" data-id="${p.id}" data-step="1" aria-label="Aumentar ${p.name}">+</button></div><span class="input-unit">fardos ou caixas por mês</span></div>`).join('');
+    $('products').innerHTML=products.map(p=>`<div class="product"><div class="product-top"><span class="product-icon">${icons[p.id]}</span><div><label class="product-name" for="${p.id}">${p.name}</label><div class="product-meta">${p.detail} · Peso aproximado: ${format(p.mass,2)} kg</div></div></div><div class="stepper"><button type="button" data-id="${p.id}" data-step="-1" aria-label="Diminuir ${p.name}">−</button><input id="${p.id}" type="number" min="0" step="1" value="0" inputmode="numeric" aria-label="Quantidade mensal de ${p.name}"><button type="button" data-id="${p.id}" data-step="1" aria-label="Aumentar ${p.name}">+</button></div><span class="input-unit">fardos ou caixas por mês</span></div>`).join('');
     function calculate(){let mass=0,packs=0;products.forEach(p=>{const q=Math.max(0,parseInt($(p.id).value,10)||0);packs+=q;mass+=q*p.mass});const water=mass*coef.water,energy=mass*coef.energy,area=mass*coef.area,carbon=mass*coef.carbon;$('total-packs').textContent=format(packs);$('total-mass').textContent=format(mass,1);$('water').textContent=format(water);$('energy').textContent=format(energy,1);$('area').textContent=format(area,1);$('carbon').textContent=format(carbon,1);$('water-eq').textContent=format(water/equiv.shower);$('energy-eq').textContent=format(energy/equiv.fridge,1);$('area-eq').textContent=format(area/equiv.seedling,1);$('carbon-eq').textContent=format(carbon/equiv.carKm,1);const grid=document.querySelector('.result-grid');grid.classList.remove('pulse');void grid.offsetWidth;grid.classList.add('pulse')}
     document.addEventListener('input',e=>{if(e.target.matches('input[type=number]'))calculate()});document.addEventListener('click',e=>{const b=e.target.closest('button[data-id]');if(!b)return;const input=$(b.dataset.id);input.value=Math.max(0,(parseInt(input.value,10)||0)+Number(b.dataset.step));calculate()});$('clear').addEventListener('click',()=>{products.forEach(p=>$(p.id).value=0);calculate()});$('see-impact').addEventListener('click',()=>$('results').scrollIntoView({behavior:'smooth',block:'start'}));calculate();
   </script>
